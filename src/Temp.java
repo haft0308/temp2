@@ -9,6 +9,7 @@ public class Temp {
 
 		System.out.println("temp");
 		System.out.println("CaptainKid");
+		System.out.println("ÀÌÁÖÇù");
 	}
 
 }
