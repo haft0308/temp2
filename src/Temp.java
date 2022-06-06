@@ -8,7 +8,13 @@ public class Temp {
 		System.out.println("temp");
 
 		System.out.println("temp");
+
 		System.out.println("어진용");
+
+		System.out.println("izzie10");
+		
+		System.out.println("dfdfdf");
+
 	}
 
 }
