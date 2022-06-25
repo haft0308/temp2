@@ -2,20 +2,16 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
-import java.sql.Connection;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Properties;
 import java.util.Scanner;
 
-public class MovieProject {
+public class MainApp {
 
 	public static void main(String[] args) throws IOException {
 
@@ -100,7 +96,6 @@ class MainMenu extends AbstractMenu
 		}		
 }
 
-
 class AdminMenu extends AbstractMenu //관리자메뉴 동작확인 O //인풋 미스매치. 
 {
 	//관리자 메뉴의 출력과 입력에 따른 처리를 담당
@@ -126,8 +121,7 @@ class AdminMenu extends AbstractMenu //관리자메뉴 동작확인 O //인풋 �
 			System.out.println("숫자를 입력하세요.");
 			MainMenu mm = new MainMenu();
 			mm.choose();
-		}
-		
+		}		
 	}
 	public void choose() throws IOException
 	{
@@ -366,10 +360,10 @@ class Reservation implements Serializable// 예매 저장까지 완료
 {
 	//예매 정보를 관리하는 클래스
 	//예매 파일 입출력을 담당
-	long reStamp;
-	long stamp;
-	String name; 	
-	String seat;
+	private long reStamp;
+	private long stamp;
+	private String name; 	
+	private String seat;
 	
 	MovieList ml=new MovieList();
 	File file = new File("src/reservation.txt");
@@ -538,15 +532,15 @@ class Reservation implements Serializable// 예매 저장까지 완료
 class Seats
 {	
 	//예매 좌석을 관리하는 클래스, 좌석은 영화별로 다르게 저장되어야...
-	int[][] seat = new int[5][9];
+	private int[][] seat = new int[5][9];
 	int number=-1;	//예약이 끝난 좌석은 X, 빈 좌석은 0
 	boolean isFull = false;
 	boolean flag=true;
 	String str;	
-	String seatSelect="";
+	private String seatSelect="";
 	Reservation re;	
 	MovieList ml=new MovieList();
-	String name;
+	private String name;
 	long stamp;
 		
 	ArrayList<Reservation> al = new ArrayList<Reservation>();
@@ -850,7 +844,7 @@ class MovieList // 무비리스트는 무비.txt가 있다는 가정,, 아니라
 					}
 				}
 		}
-		catch(InputMismatchException e) //왜 어드민 삭제,등등에서만 위로 올라
+		catch(InputMismatchException e)
 		{
 			System.out.println("숫자만 입력하세요");
 			MainMenu mm = new MainMenu();
