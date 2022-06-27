@@ -1089,7 +1089,7 @@ class Admin{						//관리자클래스
 				
 				while((seatLine = seatbr.readLine())!=null) {
 					arr = seatLine.split(" ");
-					if(arr[0].contains(delnum)) {
+					if(arr[0].equals(delnum)) {
 						break;
 					}
 					newseat += (seatLine+"\r\n");
